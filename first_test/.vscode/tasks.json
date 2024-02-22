@@ -1,0 +1,55 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "GCC Compile Multi-Cpps",
+            "command": "C:\\CplusEnv\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-std=c++20",
+                "-fdiagnostics-color=always",
+                "-g",
+                //"${file}", // 编译当前打开(编辑)的 .cpp 文件
+                "${fileDirname}/*.cpp",   // 编译当前打开的文件所在目录下的所有.cpp 文件
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "compiler: C:\\CplusEnv\\mingw64\\bin\\g++.exe"
+        },
+        {
+            "type": "cppbuild",
+            "label": "GCC Compile Single-Cpp",
+            "command": "C:\\CplusEnv\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-std=c++20",
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}", // 编译当前打开(编辑)的 .cpp 文件
+                //"${fileDirname}/*.cpp",   // 编译当前打开的文件所在目录下的所有.cpp 文件
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                //"isDefault": true
+            },
+            "detail": "compiler: C:\\CplusEnv\\mingw64\\bin\\g++.exe"
+        },
+    ]
+}
